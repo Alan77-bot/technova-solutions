@@ -1,0 +1,187 @@
+/* =========================================
+   TECHNOVA SOLUTIONS
+   ESTILOS GENERALES DEL PROYECTO
+========================================= */
+
+:root {
+    --color-primary: #971A2D;
+    --color-secondary: #244779;
+    --color-success: #278C57;
+    --color-accent: #D98A00;
+    --color-text: #22252B;
+    --color-bg: #F7F8FA;
+    --color-white: #FFFFFF;
+    --color-border: #E5E7EB;
+}
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+/* =========================================
+   TEXTOS
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.section-title {
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.btn-team {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-team:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.card-team {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.card-team:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   CONTENEDORES
+========================================= */
+
+.section {
+    padding: 60px 0;
+}
+
+.container-team {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   INICIO - INTEGRANTE 1
+========================================= */
+
+
+/* =========================================
+   NAVBAR Y FOOTER - INTEGRANTE 1
+========================================= */
+
+
+/* =========================================
+   SERVICIOS - INTEGRANTE 2
+========================================= */
+
+
+/* =========================================
+   FILTRO DE SERVICIOS - INTEGRANTE 2
+========================================= */
+
+
+/* =========================================
+   SOLUCIONES - INTEGRANTE 3
+========================================= */
+
+
+/* =========================================
+   DETALLE DE SOLUCIÓN - INTEGRANTE 3
+========================================= */
+
+
+/* =========================================
+   NOSOTROS - INTEGRANTE 4
+========================================= */
+
+
+/* =========================================
+   EQUIPO - INTEGRANTE 4
+========================================= */
+
+
+/* =========================================
+   CONTACTO - INTEGRANTE 5
+========================================= */
+
+
+/* =========================================
+   VALIDACIÓN DE CONTACTO - INTEGRANTE 5
+========================================= */
+
+
+/* =========================================
+   FAQ - INTEGRANTE 6
+========================================= */
+
+
+/* =========================================
+   TESTIMONIOS - INTEGRANTE 6
+========================================= */
+
+
+/* =========================================
+   RESPONSIVE GENERAL
+========================================= */
+
+@media (max-width: 768px) {
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .container-team {
+        width: 94%;
+    }
+}

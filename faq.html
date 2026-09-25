@@ -7,13 +7,11 @@
 
     <title>Preguntas Frecuentes | TechNova Solutions</title>
 
-    <!-- Bootstrap CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-    <!-- CSS del proyecto -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -23,9 +21,8 @@
          NAVBAR - INTEGRANTE 1
     ========================================== -->
     <header>
-        <!-- Navbar común del proyecto -->
+        <!-- feature/navbar-footer -->
     </header>
-
 
     <main>
 
@@ -45,16 +42,177 @@
                     sobre nuestros servicios.
                 </p>
 
-                <!--
-                    feature/faq
-                    Aquí se desarrollará el Accordion de Bootstrap.
-                -->
+                <div class="accordion" id="accordionFAQ">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button
+                                class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne"
+                                aria-expanded="true"
+                                aria-controls="collapseOne"
+                            >
+                                ¿Qué servicios ofrece TechNova Solutions?
+                            </button>
+                        </h2>
+
+                        <div
+                            id="collapseOne"
+                            class="accordion-collapse collapse show"
+                            aria-labelledby="headingOne"
+                            data-bs-parent="#accordionFAQ"
+                        >
+                            <div class="accordion-body">
+                                TechNova Solutions ofrece servicios de desarrollo web,
+                                soporte técnico, soluciones en la nube y consultoría tecnológica.
+                            </div>
+                        </div>
+                    </div>
 
 
-                <!--
-                    feature/testimonios
-                    Aquí se agregarán testimonios de clientes.
-                -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo"
+                                aria-expanded="false"
+                                aria-controls="collapseTwo"
+                            >
+                                ¿Cómo puedo solicitar un servicio?
+                            </button>
+                        </h2>
+
+                        <div
+                            id="collapseTwo"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionFAQ"
+                        >
+                            <div class="accordion-body">
+                                Puedes solicitar información mediante la sección de contacto
+                                del sitio web, indicando el servicio que necesitas.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree"
+                                aria-expanded="false"
+                                aria-controls="collapseThree"
+                            >
+                                ¿Ofrecen soporte técnico?
+                            </button>
+                        </h2>
+
+                        <div
+                            id="collapseThree"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingThree"
+                            data-bs-parent="#accordionFAQ"
+                        >
+                            <div class="accordion-body">
+                                Sí. Ofrecemos soporte técnico orientado a resolver problemas
+                                relacionados con sistemas, aplicaciones y servicios tecnológicos.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour"
+                                aria-expanded="false"
+                                aria-controls="collapseFour"
+                            >
+                                ¿Trabajan con soluciones en la nube?
+                            </button>
+                        </h2>
+
+                        <div
+                            id="collapseFour"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingFour"
+                            data-bs-parent="#accordionFAQ"
+                        >
+                            <div class="accordion-body">
+                                Sí. TechNova Solutions ofrece soluciones en la nube
+                                orientadas al almacenamiento, disponibilidad y gestión
+                                de servicios tecnológicos.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive"
+                                aria-expanded="false"
+                                aria-controls="collapseFive"
+                            >
+                                ¿Realizan desarrollo web personalizado?
+                            </button>
+                        </h2>
+
+                        <div
+                            id="collapseFive"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingFive"
+                            data-bs-parent="#accordionFAQ"
+                        >
+                            <div class="accordion-body">
+                                Sí. Desarrollamos soluciones web adaptadas a las necesidades
+                                y objetivos de cada cliente.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix"
+                                aria-expanded="false"
+                                aria-controls="collapseSix"
+                            >
+                                ¿Cómo puedo contactar con TechNova Solutions?
+                            </button>
+                        </h2>
+
+                        <div
+                            id="collapseSix"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingSix"
+                            data-bs-parent="#accordionFAQ"
+                        >
+                            <div class="accordion-body">
+                                Puedes utilizar el formulario disponible en la sección
+                                Contacto para comunicarte con nuestro equipo.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
 
@@ -62,21 +220,17 @@
 
     </main>
 
-
     <!-- =========================================
          FOOTER - INTEGRANTE 1
     ========================================== -->
     <footer>
-        <!-- Footer común del proyecto -->
+        <!-- feature/navbar-footer -->
     </footer>
 
-
-    <!-- Bootstrap JavaScript -->
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
-    <!-- JavaScript del proyecto -->
     <script src="js/main.js"></script>
 
 </body>

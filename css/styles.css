@@ -167,6 +167,11 @@ p {
     border-color: var(--color-primary);
     border-radius: 8px;
 }
+@media (max-width: 576px) {
+    #form-contacto {
+        padding: 0.5rem;
+    }
+}
 
 /* =========================================
    VALIDACIÓN DE CONTACTO - INTEGRANTE 5

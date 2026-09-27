@@ -75,10 +75,17 @@
 </div>
 
 
-                <!--
-                    feature/validacion-contacto
-                    Aquí se implementarán las validaciones.
-                -->
+               <script>
+document.getElementById('form-contacto').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre').value.trim();
+    const correo = document.getElementById('correo').value.trim();
+    const asunto = document.getElementById('asunto').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
+    const feedback = document.getElementById('contacto-feedback');
+});
+</script>
 
             </div>
 

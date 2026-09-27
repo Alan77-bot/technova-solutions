@@ -94,6 +94,8 @@ document.getElementById('form-contacto').addEventListener('submit', function (e)
         feedback.innerHTML = '<div class="alert alert-danger">Por favor ingresa un correo válido.</div>';
         return;
     }
+        feedback.innerHTML = '<div class="alert alert-success">Tu mensaje fue enviado correctamente.</div>';
+    this.reset();
 });
 </script>
 

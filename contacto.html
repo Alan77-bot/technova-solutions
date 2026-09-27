@@ -88,6 +88,12 @@ document.getElementById('form-contacto').addEventListener('submit', function (e)
         feedback.innerHTML = '<div class="alert alert-danger">Por favor completa todos los campos.</div>';
         return;
     }
+        const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regexCorreo.test(correo)) {
+        feedback.innerHTML = '<div class="alert alert-danger">Por favor ingresa un correo válido.</div>';
+        return;
+    }
 });
 </script>
 

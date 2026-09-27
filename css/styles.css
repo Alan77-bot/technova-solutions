@@ -187,6 +187,51 @@ p {
 /* =========================================
    FAQ - INTEGRANTE 6
 ========================================= */
+.faq-section {
+    padding: 60px 0;
+}
+
+.faq-intro {
+    margin-bottom: 30px;
+    color: var(--color-text);
+}
+
+.faq-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-accordion .accordion-item {
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.faq-accordion .accordion-button {
+    font-weight: 700;
+    color: var(--color-secondary);
+    background-color: var(--color-white);
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    box-shadow: none;
+}
+
+.faq-accordion .accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.faq-accordion .accordion-body {
+    color: var(--color-text);
+    background-color: var(--color-white);
+    line-height: 1.6;
+}
 
 /* =========================================
    TESTIMONIOS - INTEGRANTE 6

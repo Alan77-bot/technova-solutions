@@ -158,9 +158,27 @@ p {
    EQUIPO - INTEGRANTE 4
 ========================================= */
 
-/* =========================================
-   CONTACTO - INTEGRANTE 5
-========================================= */
+/* ===== CONTACTO - INTEGRANTE 5 ===== */
+#form-contacto .form-label {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+#form-contacto .form-control:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 0.2rem rgba(36, 71, 121, 0.25);
+}
+
+#form-contacto .btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    border-radius: 8px;
+}
+@media (max-width: 576px) {
+    #form-contacto {
+        padding: 0.5rem;
+    }
+}
 
 /* =========================================
    VALIDACIÓN DE CONTACTO - INTEGRANTE 5

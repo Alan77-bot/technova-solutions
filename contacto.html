@@ -84,6 +84,10 @@ document.getElementById('form-contacto').addEventListener('submit', function (e)
     const asunto = document.getElementById('asunto').value.trim();
     const mensaje = document.getElementById('mensaje').value.trim();
     const feedback = document.getElementById('contacto-feedback');
+        if (!nombre || !correo || !asunto || !mensaje) {
+        feedback.innerHTML = '<div class="alert alert-danger">Por favor completa todos los campos.</div>';
+        return;
+    }
 });
 </script>
 

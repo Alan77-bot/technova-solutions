@@ -167,10 +167,166 @@ function marcarPaginaActiva() {
     });
 }
 
+
+function cargarFooter() {
+
+    const footer = document.querySelector("footer");
+
+    if (!footer) {
+        return;
+    }
+
+
+    const anioActual =
+        new Date().getFullYear();
+
+
+    footer.classList.add("site-footer");
+
+
+    footer.innerHTML = `
+        <div class="container">
+
+            <div class="site-footer-main">
+
+                <!-- MARCA -->
+                <div class="footer-brand-column">
+
+                    <a
+                        href="index.html"
+                        class="footer-brand"
+                    >
+
+                        <span class="footer-brand-logo">
+                            TN
+                        </span>
+
+                        <span>
+                            <strong>TechNova</strong>
+                            <small>Solutions</small>
+                        </span>
+
+                    </a>
+
+
+                    <p class="footer-description">
+                        Creamos soluciones digitales modernas,
+                        confiables y preparadas para acompañar
+                        el crecimiento de cada proyecto.
+                    </p>
+
+
+                    <span class="footer-badge">
+                        Tecnología con propósito
+                    </span>
+
+                </div>
+
+
+                <!-- NAVEGACIÓN -->
+                <div class="footer-column">
+
+                    <h3>
+                        Navegación
+                    </h3>
+
+                    <a href="index.html">
+                        Inicio
+                    </a>
+
+                    <a href="servicios.html">
+                        Servicios
+                    </a>
+
+                    <a href="soluciones.html">
+                        Soluciones
+                    </a>
+
+                    <a href="nosotros.html">
+                        Nosotros
+                    </a>
+
+                </div>
+
+
+                <!-- INFORMACIÓN -->
+                <div class="footer-column">
+
+                    <h3>
+                        Explorar
+                    </h3>
+
+                    <a href="faq.html">
+                        Preguntas frecuentes
+                    </a>
+
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
+
+                    <a href="servicios.html">
+                        Desarrollo Web
+                    </a>
+
+                    <a href="soluciones.html">
+                        Soluciones digitales
+                    </a>
+
+                </div>
+
+
+                <!-- CTA -->
+                <div class="footer-contact-column">
+
+                    <span class="footer-small-title">
+                        ¿TIENES UN PROYECTO?
+                    </span>
+
+                    <h3>
+                        Hagamos algo
+                        extraordinario.
+                    </h3>
+
+                    <p>
+                        Descubre cómo TechNova puede ayudarte
+                        a transformar una idea en una solución.
+                    </p>
+
+                    <a
+                        href="contacto.html"
+                        class="footer-contact-button"
+                    >
+                        Contáctanos
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PARTE INFERIOR -->
+            <div class="site-footer-bottom">
+
+                <p>
+                    © ${anioActual} TechNova Solutions.
+                </p>
+
+                <p>
+                    Innovación · Tecnología · Confianza
+                </p>
+
+            </div>
+
+        </div>
+    `;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     cargarNavbar();
     marcarPaginaActiva();
+    cargarFooter();
 
 });
 

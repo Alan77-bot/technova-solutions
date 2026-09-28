@@ -499,7 +499,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   buscador.addEventListener("input", aplicarFiltros);
 
-  // AQUI VAN LOS BOTONES
+  botones.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+      categoriaActiva = boton.dataset.filtro;
+
+      botones.forEach(function (b) {
+        b.classList.remove("activo");
+      });
+      boton.classList.add("activo");
+
+      aplicarFiltros();
+    });
+  });
 });
 
 /* =========================================

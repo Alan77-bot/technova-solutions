@@ -45,7 +45,7 @@
                 </p>
 
                <div class="card p-4 mt-4">
-    <form id="form-contacto">
+    <form id="form-contacto" novalidate>
 
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
@@ -75,10 +75,29 @@
 </div>
 
 
-                <!--
-                    feature/validacion-contacto
-                    Aquí se implementarán las validaciones.
-                -->
+               <script>
+document.getElementById('form-contacto').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre').value.trim();
+    const correo = document.getElementById('correo').value.trim();
+    const asunto = document.getElementById('asunto').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
+    const feedback = document.getElementById('contacto-feedback');
+        if (!nombre || !correo || !asunto || !mensaje) {
+        feedback.innerHTML = '<div class="alert alert-danger">Por favor completa todos los campos.</div>';
+        return;
+    }
+        const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regexCorreo.test(correo)) {
+        feedback.innerHTML = '<div class="alert alert-danger">Por favor ingresa un correo válido.</div>';
+        return;
+    }
+        feedback.innerHTML = '<div class="alert alert-success">Tu mensaje fue enviado correctamente.</div>';
+    this.reset();
+});
+</script>
 
             </div>
 

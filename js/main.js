@@ -470,7 +470,36 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  // AQUI VAN LAS SIGUIENTES PARTES
+  function aplicarFiltros() {
+    const texto = buscador.value.toLowerCase().trim();
+    let visibles = 0;
+
+    servicios.forEach(function (servicio) {
+      const contenido = (
+        servicio.querySelector("h3").textContent +
+        " " +
+        servicio.querySelector("p").textContent
+      ).toLowerCase();
+
+      const coincideTexto = contenido.includes(texto);
+      const coincideCategoria =
+        categoriaActiva === "todos" ||
+        servicio.dataset.categoria === categoriaActiva;
+      const mostrar = coincideTexto && coincideCategoria;
+
+      servicio.classList.toggle("d-none", !mostrar);
+
+      if (mostrar) {
+        visibles++;
+      }
+    });
+
+    mensajeVacio.classList.toggle("d-none", visibles > 0);
+  }
+
+  buscador.addEventListener("input", aplicarFiltros);
+
+  // AQUI VAN LOS BOTONES
 });
 
 /* =========================================

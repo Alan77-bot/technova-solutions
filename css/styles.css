@@ -1383,6 +1383,145 @@ p {
     line-height: 1.6;
 }
 
+/* ==========================================================
+   FINAL CTA
+========================================================== */
+
+.home-final-cta {
+    background-color: var(--color-bg);
+}
+
+
+.final-cta-box {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 75px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-secondary),
+            #192E50
+        );
+
+    box-shadow:
+        0 28px 65px rgba(36, 71, 121, 0.20);
+}
+
+
+.final-cta-decoration {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -260px;
+    right: -150px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+
+.final-cta-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 760px;
+}
+
+
+.final-cta-content > span {
+    color: rgba(255, 255, 255, 0.60);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+}
+
+
+.final-cta-content h2 {
+    margin-top: 12px;
+    margin-bottom: 18px;
+
+    color: var(--color-white);
+
+    font-size: clamp(35px, 5vw, 52px);
+    font-weight: 800;
+
+    line-height: 1.08;
+    letter-spacing: -1px;
+}
+
+
+.final-cta-content p {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.70);
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+.final-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.final-cta-primary,
+.final-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 22px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: all 0.25s ease;
+}
+
+
+.final-cta-primary {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+
+
+.final-cta-primary:hover {
+    color: var(--color-white);
+
+    transform: translateY(-3px);
+}
+
+
+.final-cta-secondary {
+    gap: 10px;
+
+    color: var(--color-white);
+
+    border: 1px solid rgba(255, 255, 255, 0.40);
+}
+
+
+.final-cta-secondary:hover {
+    color: var(--color-secondary);
+    background-color: var(--color-white);
+}
+
 
 /* =========================================
    NAVBAR Y FOOTER - INTEGRANTE 1

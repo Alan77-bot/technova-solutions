@@ -1105,6 +1105,129 @@ p {
     width: 100%;
 }
 
+/* ==========================================================
+   IMPACT
+========================================================== */
+
+.home-impact {
+    background-color: var(--color-white);
+}
+
+
+.impact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+
+    align-items: center;
+
+    padding: 75px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(36, 71, 121, 0.035),
+            rgba(151, 26, 45, 0.025)
+        );
+}
+
+
+.impact-content h2 {
+    max-width: 600px;
+
+    margin-bottom: 20px;
+
+    color: var(--color-text);
+
+    font-size: clamp(31px, 4vw, 44px);
+    font-weight: 800;
+
+    line-height: 1.13;
+}
+
+
+.impact-content p {
+    max-width: 600px;
+
+    color: #696E77;
+
+    line-height: 1.75;
+}
+
+
+.impact-link {
+    display: inline-flex;
+    gap: 10px;
+
+    margin-top: 16px;
+
+    color: var(--color-secondary);
+
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+.impact-link span {
+    transition: transform 0.25s ease;
+}
+
+
+.impact-link:hover span {
+    transform: translateX(5px);
+}
+
+
+.impact-data {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.impact-data-card {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    column-gap: 18px;
+
+    padding: 23px 0;
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+.impact-data-card:last-child {
+    border-bottom: 0;
+}
+
+
+.impact-data-number {
+    grid-row: span 2;
+
+    color: var(--color-primary);
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.impact-data-card strong {
+    color: var(--color-secondary);
+
+    font-size: 17px;
+}
+
+
+.impact-data-card p {
+    margin: 4px 0 0;
+
+    color: #727780;
+
+    font-size: 13px;
+}
+
 
 /* =========================================
    NAVBAR Y FOOTER - INTEGRANTE 1

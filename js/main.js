@@ -20,15 +20,20 @@ document.addEventListener("DOMContentLoaded", () => {
 // Rama: feature/navbar-footer
 // =========================================
 
-function cargarNavbar() {
+// =========================================
+// NAVBAR GLOBAL - INTEGRANTE 1
+// Rama: feature/navbar-footer
+// =========================================
 
-   
+function cargarNavbar() {
 
     const header = document.querySelector("header");
 
     if (!header) {
         return;
     }
+
+    header.classList.add("site-header");
 
     header.innerHTML = `
         <nav class="navbar navbar-expand-lg site-navbar">
@@ -47,14 +52,21 @@ function cargarNavbar() {
                     </span>
 
                     <span class="site-brand-text">
-                        <strong>TechNova</strong>
-                        <small>Solutions</small>
+
+                        <strong>
+                            TechNova
+                        </strong>
+
+                        <small>
+                            Digital Solutions
+                        </small>
+
                     </span>
 
                 </a>
 
 
-                <!-- BOTÓN MÓVIL -->
+                <!-- BOTÓN MENÚ MÓVIL -->
                 <button
                     class="navbar-toggler site-navbar-toggler"
                     type="button"
@@ -62,7 +74,7 @@ function cargarNavbar() {
                     data-bs-target="#navbarTechNova"
                     aria-controls="navbarTechNova"
                     aria-expanded="false"
-                    aria-label="Abrir navegación"
+                    aria-label="Abrir menú de navegación"
                 >
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -122,13 +134,23 @@ function cargarNavbar() {
                         </li>
 
                         <li class="nav-item site-nav-contact">
+
                             <a
                                 class="site-nav-button"
                                 href="contacto.html"
                             >
-                                Contáctanos
-                                <span>→</span>
+                                <span class="site-nav-button-text">
+                                    Hablemos
+                                </span>
+
+                                <span
+                                    class="site-nav-button-arrow"
+                                    aria-hidden="true"
+                                >
+                                    →
+                                </span>
                             </a>
+
                         </li>
 
                     </ul>
@@ -141,8 +163,9 @@ function cargarNavbar() {
     `;
 }
 
+
 // =========================================
-// PÁGINA ACTIVA DEL NAVBAR
+// PÁGINA ACTIVA
 // =========================================
 
 function marcarPaginaActiva() {
@@ -151,8 +174,9 @@ function marcarPaginaActiva() {
         window.location.pathname.split("/").pop()
         || "index.html";
 
-    const enlaces =
-        document.querySelectorAll(".site-nav-link");
+    const enlaces = document.querySelectorAll(
+        ".site-nav-link, .site-nav-button"
+    );
 
     enlaces.forEach(function (enlace) {
 
@@ -162,32 +186,88 @@ function marcarPaginaActiva() {
 
             enlace.classList.add("active");
 
+            enlace.setAttribute(
+                "aria-current",
+                "page"
+            );
+
         }
 
     });
 }
 
 
+// =========================================
+// CERRAR MENÚ MÓVIL AL NAVEGAR
+// =========================================
+
+function configurarMenuMovil() {
+
+    const menu =
+        document.getElementById("navbarTechNova");
+
+    if (!menu) {
+        return;
+    }
+
+    const enlaces =
+        menu.querySelectorAll("a");
+
+    enlaces.forEach(function (enlace) {
+
+        enlace.addEventListener("click", function () {
+
+            if (
+                window.innerWidth < 992 &&
+                menu.classList.contains("show") &&
+                window.bootstrap
+            ) {
+
+                const collapse =
+                    bootstrap.Collapse.getOrCreateInstance(menu);
+
+                collapse.hide();
+
+            }
+
+        });
+
+    });
+}
+
+
+// =========================================
+// FOOTER GLOBAL - INTEGRANTE 1
+// Rama: feature/navbar-footer
+// =========================================
+
 function cargarFooter() {
 
-    const footer = document.querySelector("footer");
+    const footer =
+        document.querySelector("footer");
 
     if (!footer) {
         return;
     }
 
-
     const anioActual =
         new Date().getFullYear();
 
-
     footer.classList.add("site-footer");
 
-
     footer.innerHTML = `
+
+        <!-- DECORACIONES -->
+        <div class="footer-decoration footer-decoration-one"></div>
+        <div class="footer-decoration footer-decoration-two"></div>
+
         <div class="container">
 
+            <!-- =====================================
+                 PARTE SUPERIOR
+            ====================================== -->
             <div class="site-footer-main">
+
 
                 <!-- MARCA -->
                 <div class="footer-brand-column">
@@ -201,24 +281,37 @@ function cargarFooter() {
                             TN
                         </span>
 
-                        <span>
-                            <strong>TechNova</strong>
-                            <small>Solutions</small>
+                        <span class="footer-brand-text">
+
+                            <strong>
+                                TechNova
+                            </strong>
+
+                            <small>
+                                Digital Solutions
+                            </small>
+
                         </span>
 
                     </a>
 
 
                     <p class="footer-description">
-                        Creamos soluciones digitales modernas,
-                        confiables y preparadas para acompañar
-                        el crecimiento de cada proyecto.
+                        Transformamos ideas en soluciones digitales
+                        modernas, confiables y preparadas para
+                        acompañar el crecimiento de cada proyecto.
                     </p>
 
 
-                    <span class="footer-badge">
-                        Tecnología con propósito
-                    </span>
+                    <div class="footer-brand-message">
+
+                        <span class="footer-brand-dot"></span>
+
+                        <span>
+                            Tecnología con propósito
+                        </span>
+
+                    </div>
 
                 </div>
 
@@ -226,49 +319,65 @@ function cargarFooter() {
                 <!-- NAVEGACIÓN -->
                 <div class="footer-column">
 
+                    <span class="footer-column-label">
+                        EXPLORAR
+                    </span>
+
                     <h3>
                         Navegación
                     </h3>
 
                     <a href="index.html">
+                        <span>→</span>
                         Inicio
                     </a>
 
                     <a href="servicios.html">
+                        <span>→</span>
                         Servicios
                     </a>
 
                     <a href="soluciones.html">
+                        <span>→</span>
                         Soluciones
                     </a>
 
                     <a href="nosotros.html">
+                        <span>→</span>
                         Nosotros
                     </a>
 
                 </div>
 
 
-                <!-- INFORMACIÓN -->
+                <!-- RECURSOS -->
                 <div class="footer-column">
 
+                    <span class="footer-column-label">
+                        INFORMACIÓN
+                    </span>
+
                     <h3>
-                        Explorar
+                        Recursos
                     </h3>
 
                     <a href="faq.html">
+                        <span>→</span>
                         Preguntas frecuentes
                     </a>
 
                     <a href="contacto.html">
+                        <span>→</span>
                         Contacto
                     </a>
 
                     <a href="servicios.html">
+                        <span>→</span>
                         Desarrollo Web
                     </a>
 
                     <a href="soluciones.html">
+                        <span>→</span>
                         Soluciones digitales
                     </a>
 
@@ -279,25 +388,29 @@ function cargarFooter() {
                 <div class="footer-contact-column">
 
                     <span class="footer-small-title">
-                        ¿TIENES UN PROYECTO?
+                        ¿TIENES UNA IDEA?
                     </span>
 
                     <h3>
-                        Hagamos algo
-                        extraordinario.
+                        Construyamos algo
+                        que genere valor.
                     </h3>
 
                     <p>
-                        Descubre cómo TechNova puede ayudarte
-                        a transformar una idea en una solución.
+                        Conoce cómo TechNova puede ayudarte
+                        a convertir una necesidad en una
+                        solución tecnológica.
                     </p>
 
                     <a
                         href="contacto.html"
                         class="footer-contact-button"
                     >
-                        Contáctanos
-                        <span>→</span>
+                        Iniciar conversación
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
                     </a>
 
                 </div>
@@ -305,16 +418,48 @@ function cargarFooter() {
             </div>
 
 
-            <!-- PARTE INFERIOR -->
+            <!-- =====================================
+                 BARRA INFERIOR
+            ====================================== -->
             <div class="site-footer-bottom">
 
-                <p>
-                    © ${anioActual} TechNova Solutions.
-                </p>
+                <div class="footer-copyright">
 
-                <p>
-                    Innovación · Tecnología · Confianza
-                </p>
+                    <span class="footer-mini-logo">
+                        TN
+                    </span>
+
+                    <p>
+                        © ${anioActual} TechNova Solutions.
+                        Todos los derechos reservados.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-bottom-values">
+
+                    <span>
+                        Innovación
+                    </span>
+
+                    <span class="footer-separator">
+                        •
+                    </span>
+
+                    <span>
+                        Tecnología
+                    </span>
+
+                    <span class="footer-separator">
+                        •
+                    </span>
+
+                    <span>
+                        Confianza
+                    </span>
+
+                </div>
 
             </div>
 
@@ -322,14 +467,23 @@ function cargarFooter() {
     `;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    cargarNavbar();
-    marcarPaginaActiva();
-    cargarFooter();
+// =========================================
+// INICIALIZACIÓN
+// =========================================
 
-});
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
+        cargarNavbar();
+        cargarFooter();
+
+        marcarPaginaActiva();
+        configurarMenuMovil();
+
+    }
+);
 
 
 /* =========================================

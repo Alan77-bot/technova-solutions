@@ -141,6 +141,13 @@ p {
 }
 
 
+@media (max-width: 576px) {
+    .card-team {
+        text-align: center;
+    }
+}
+
+
 /* =========================================
    DETALLE DE SOLUCIÓN - INTEGRANTE 3
 ========================================= */

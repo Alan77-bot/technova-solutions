@@ -848,6 +848,52 @@ p {
 }
 
 
+/* ==========================================================
+   BRAND STRIP
+========================================================== */
+
+.brand-strip {
+    padding: 20px 0;
+
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+
+    background-color: var(--color-white);
+}
+
+.brand-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.brand-strip-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 11px 20px;
+
+    border-right: 1px solid var(--color-border);
+
+    color: var(--color-secondary);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.brand-strip-item:last-child {
+    border-right: 0;
+}
+
+.brand-strip-item span {
+    color: var(--color-primary);
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
 
 /* =========================================
    NAVBAR Y FOOTER - INTEGRANTE 1

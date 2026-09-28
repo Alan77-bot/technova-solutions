@@ -42,9 +42,37 @@
             Solutions.
           </p>
 
+          <!-- Filtro de servicios -->
+          <div class="filtro-servicios mt-4">
+            <input
+              type="text"
+              id="buscador-servicios"
+              class="form-control"
+              placeholder="Buscar servicio..."
+            />
+
+            <div class="filtro-botones mt-3">
+              <button class="btn-team filtro-btn activo" data-filtro="todos">
+                Todos
+              </button>
+              <button class="btn-team filtro-btn" data-filtro="desarrollo">
+                Desarrollo
+              </button>
+              <button class="btn-team filtro-btn" data-filtro="infraestructura">
+                Infraestructura
+              </button>
+              <button class="btn-team filtro-btn" data-filtro="asesoria">
+                Asesoría
+              </button>
+            </div>
+          </div>
+
           <div class="row g-4 mt-3">
             <!-- Tarjeta: Desarrollo Web -->
-            <div class="col-md-6 col-lg-3">
+            <div
+              class="col-md-6 col-lg-3 servicio-item"
+              data-categoria="desarrollo"
+            >
               <div class="card-team h-100">
                 <i class="bi bi-code-slash card-icon"></i>
                 <h3>Desarrollo Web</h3>
@@ -56,7 +84,10 @@
               </div>
             </div>
             <!-- Tarjeta: Soporte Técnico -->
-            <div class="col-md-6 col-lg-3">
+            <div
+              class="col-md-6 col-lg-3 servicio-item"
+              data-categoria="infraestructura"
+            >
               <div class="card-team h-100">
                 <i class="bi bi-headset card-icon"></i>
                 <h3>Soporte Técnico</h3>
@@ -68,7 +99,10 @@
               </div>
             </div>
             <!-- Tarjeta: Nube -->
-            <div class="col-md-6 col-lg-3">
+            <div
+              class="col-md-6 col-lg-3 servicio-item"
+              data-categoria="infraestructura"
+            >
               <div class="card-team h-100">
                 <i class="bi bi-cloud card-icon"></i>
                 <h3>Nube</h3>
@@ -80,7 +114,10 @@
               </div>
             </div>
             <!-- Tarjeta: Consultoría -->
-            <div class="col-md-6 col-lg-3">
+            <div
+              class="col-md-6 col-lg-3 servicio-item"
+              data-categoria="asesoria"
+            >
               <div class="card-team h-100">
                 <i class="bi bi-lightbulb card-icon"></i>
                 <h3>Consultoría</h3>
@@ -92,6 +129,10 @@
               </div>
             </div>
           </div>
+
+          <p id="sin-resultados" class="text-center mt-4 d-none">
+            No se encontraron servicios con ese criterio.
+          </p>
 
           <!--
                     feature/filtro-servicios

@@ -4,16 +4,13 @@
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("TechNova Solutions cargado correctamente.");
+  console.log("TechNova Solutions cargado correctamente.");
 });
-
 
 /* =========================================
    INICIO - INTEGRANTE 1
    Rama: feature/inicio
 ========================================= */
-
-
 
 // =========================================
 // NAVBAR GLOBAL - INTEGRANTE 1
@@ -26,16 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // =========================================
 
 function cargarNavbar() {
+  const header = document.querySelector("header");
 
-    const header = document.querySelector("header");
+  if (!header) {
+    return;
+  }
 
-    if (!header) {
-        return;
-    }
+  header.classList.add("site-header");
 
-    header.classList.add("site-header");
-
-    header.innerHTML = `
+  header.innerHTML = `
         <nav class="navbar navbar-expand-lg site-navbar">
 
             <div class="container">
@@ -163,78 +159,54 @@ function cargarNavbar() {
     `;
 }
 
-
 // =========================================
 // PÁGINA ACTIVA
 // =========================================
 
 function marcarPaginaActiva() {
+  const paginaActual =
+    window.location.pathname.split("/").pop() || "index.html";
 
-    const paginaActual =
-        window.location.pathname.split("/").pop()
-        || "index.html";
+  const enlaces = document.querySelectorAll(".site-nav-link, .site-nav-button");
 
-    const enlaces = document.querySelectorAll(
-        ".site-nav-link, .site-nav-button"
-    );
+  enlaces.forEach(function (enlace) {
+    const destino = enlace.getAttribute("href");
 
-    enlaces.forEach(function (enlace) {
+    if (destino === paginaActual) {
+      enlace.classList.add("active");
 
-        const destino = enlace.getAttribute("href");
-
-        if (destino === paginaActual) {
-
-            enlace.classList.add("active");
-
-            enlace.setAttribute(
-                "aria-current",
-                "page"
-            );
-
-        }
-
-    });
+      enlace.setAttribute("aria-current", "page");
+    }
+  });
 }
-
 
 // =========================================
 // CERRAR MENÚ MÓVIL AL NAVEGAR
 // =========================================
 
 function configurarMenuMovil() {
+  const menu = document.getElementById("navbarTechNova");
 
-    const menu =
-        document.getElementById("navbarTechNova");
+  if (!menu) {
+    return;
+  }
 
-    if (!menu) {
-        return;
-    }
+  const enlaces = menu.querySelectorAll("a");
 
-    const enlaces =
-        menu.querySelectorAll("a");
+  enlaces.forEach(function (enlace) {
+    enlace.addEventListener("click", function () {
+      if (
+        window.innerWidth < 992 &&
+        menu.classList.contains("show") &&
+        window.bootstrap
+      ) {
+        const collapse = bootstrap.Collapse.getOrCreateInstance(menu);
 
-    enlaces.forEach(function (enlace) {
-
-        enlace.addEventListener("click", function () {
-
-            if (
-                window.innerWidth < 992 &&
-                menu.classList.contains("show") &&
-                window.bootstrap
-            ) {
-
-                const collapse =
-                    bootstrap.Collapse.getOrCreateInstance(menu);
-
-                collapse.hide();
-
-            }
-
-        });
-
+        collapse.hide();
+      }
     });
+  });
 }
-
 
 // =========================================
 // FOOTER GLOBAL - INTEGRANTE 1
@@ -242,20 +214,17 @@ function configurarMenuMovil() {
 // =========================================
 
 function cargarFooter() {
+  const footer = document.querySelector("footer");
 
-    const footer =
-        document.querySelector("footer");
+  if (!footer) {
+    return;
+  }
 
-    if (!footer) {
-        return;
-    }
+  const anioActual = new Date().getFullYear();
 
-    const anioActual =
-        new Date().getFullYear();
+  footer.classList.add("site-footer");
 
-    footer.classList.add("site-footer");
-
-    footer.innerHTML = `
+  footer.innerHTML = `
 
         <!-- DECORACIONES -->
         <div class="footer-decoration footer-decoration-one"></div>
@@ -467,87 +436,117 @@ function cargarFooter() {
     `;
 }
 
-
 // =========================================
 // INICIALIZACIÓN
 // =========================================
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+document.addEventListener("DOMContentLoaded", function () {
+  cargarNavbar();
+  cargarFooter();
 
-        cargarNavbar();
-        cargarFooter();
-
-        marcarPaginaActiva();
-        configurarMenuMovil();
-
-    }
-);
-
+  marcarPaginaActiva();
+  configurarMenuMovil();
+});
 
 /* =========================================
    SERVICIOS - INTEGRANTE 2
    Rama: feature/servicios
 ========================================= */
 
-
-
 /* =========================================
    FILTRO DE SERVICIOS - INTEGRANTE 2
    Rama: feature/filtro-servicios
 ========================================= */
 
+document.addEventListener("DOMContentLoaded", function () {
+  const buscador = document.getElementById("buscador-servicios");
+  const botones = document.querySelectorAll(".filtro-btn");
+  const servicios = document.querySelectorAll(".servicio-item");
+  const mensajeVacio = document.getElementById("sin-resultados");
+  let categoriaActiva = "todos";
 
+  // Si la página no tiene filtro, no hace nada
+  if (!buscador) {
+    return;
+  }
+
+  function aplicarFiltros() {
+    const texto = buscador.value.toLowerCase().trim();
+    let visibles = 0;
+
+    servicios.forEach(function (servicio) {
+      const contenido = (
+        servicio.querySelector("h3").textContent +
+        " " +
+        servicio.querySelector("p").textContent
+      ).toLowerCase();
+
+      const coincideTexto = contenido.includes(texto);
+      const coincideCategoria =
+        categoriaActiva === "todos" ||
+        servicio.dataset.categoria === categoriaActiva;
+      const mostrar = coincideTexto && coincideCategoria;
+
+      servicio.classList.toggle("d-none", !mostrar);
+
+      if (mostrar) {
+        visibles++;
+      }
+    });
+
+    mensajeVacio.classList.toggle("d-none", visibles > 0);
+  }
+
+  buscador.addEventListener("input", aplicarFiltros);
+
+  botones.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+      categoriaActiva = boton.dataset.filtro;
+
+      botones.forEach(function (b) {
+        b.classList.remove("activo");
+      });
+      boton.classList.add("activo");
+
+      aplicarFiltros();
+    });
+  });
+});
 
 /* =========================================
    SOLUCIONES - INTEGRANTE 3
    Rama: feature/soluciones
 ========================================= */
 
-
-
 /* =========================================
    DETALLE DE SOLUCIÓN - INTEGRANTE 3
    Rama: feature/detalle-solucion
 ========================================= */
-
-
 
 /* =========================================
    NOSOTROS - INTEGRANTE 4
    Rama: feature/nosotros
 ========================================= */
 
-
-
 /* =========================================
    EQUIPO - INTEGRANTE 4
    Rama: feature/equipo
 ========================================= */
-
-
 
 /* =========================================
    CONTACTO - INTEGRANTE 5
    Rama: feature/contacto
 ========================================= */
 
-
-
 /* =========================================
    VALIDACIÓN DE CONTACTO - INTEGRANTE 5
    Rama: feature/validacion-contacto
 ========================================= */
 
-
-
 /* =========================================
    FAQ - INTEGRANTE 6
    Rama: feature/faq
 ========================================= */
-
-
 
 /* =========================================
    TESTIMONIOS - INTEGRANTE 6

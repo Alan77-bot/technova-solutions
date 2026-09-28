@@ -893,7 +893,59 @@ p {
     font-weight: 800;
 }
 
+/* ==========================================================
+   TEXTOS DE SECCIONES
+========================================================== */
 
+.section-kicker {
+    display: inline-block;
+
+    margin-bottom: 11px;
+
+    color: var(--color-primary);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+}
+
+.home-display-title {
+    max-width: 800px;
+
+    margin-bottom: 0;
+
+    color: var(--color-text);
+
+    font-size: clamp(32px, 4.5vw, 48px);
+    font-weight: 800;
+
+    line-height: 1.14;
+    letter-spacing: -1.3px;
+}
+
+.home-display-title span {
+    color: var(--color-primary);
+}
+
+.section-lead {
+    max-width: 630px;
+
+    color: #696E77;
+
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+
+/* INTRODUCCIÓN */
+
+.home-introduction {
+    padding-top: 100px;
+    padding-bottom: 60px;
+
+    background-color: var(--color-bg);
+}
 
 /* =========================================
    NAVBAR Y FOOTER - INTEGRANTE 1

@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function cargarNavbar() {
 
+   
+
     const header = document.querySelector("header");
 
     if (!header) {
@@ -139,9 +141,36 @@ function cargarNavbar() {
     `;
 }
 
+// =========================================
+// PÁGINA ACTIVA DEL NAVBAR
+// =========================================
+
+function marcarPaginaActiva() {
+
+    const paginaActual =
+        window.location.pathname.split("/").pop()
+        || "index.html";
+
+    const enlaces =
+        document.querySelectorAll(".site-nav-link");
+
+    enlaces.forEach(function (enlace) {
+
+        const destino = enlace.getAttribute("href");
+
+        if (destino === paginaActual) {
+
+            enlace.classList.add("active");
+
+        }
+
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     cargarNavbar();
+    marcarPaginaActiva();
 
 });
 

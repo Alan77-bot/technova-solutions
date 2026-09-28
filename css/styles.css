@@ -313,6 +313,34 @@ p {
 }
 
 /* =========================================
+   PÁGINA ACTIVA
+========================================= */
+
+.site-nav-link.active {
+    color: var(--color-primary) !important;
+
+    font-weight: 700;
+}
+
+
+.site-nav-link.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 13px;
+    right: 13px;
+    bottom: 3px;
+
+    height: 2px;
+
+    border-radius: 50px;
+
+    background-color: var(--color-primary);
+}
+
+
+/* =========================================
    SERVICIOS - INTEGRANTE 2
 ========================================= */
 

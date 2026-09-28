@@ -236,6 +236,35 @@ p {
 /* =========================================
    TESTIMONIOS - INTEGRANTE 6
 ========================================= */
+.testimonios-section {
+  padding: 60px 0;
+}
+
+.testimonios-intro {
+  margin-bottom: 30px;
+  color: var(--color-text);
+}
+
+.testimonios-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonios-card h3 {
+  color: var(--color-secondary);
+  margin-bottom: 8px;
+}
+
+.testimonios-card .text-muted {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.testimonios-card p {
+  margin-bottom: 0;
+}
 
 /* =========================================
    RESPONSIVE GENERAL

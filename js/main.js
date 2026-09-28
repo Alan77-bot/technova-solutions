@@ -15,10 +15,135 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/* =========================================
-   NAVBAR Y FOOTER - INTEGRANTE 1
-   Rama: feature/navbar-footer
-========================================= */
+// =========================================
+// NAVBAR GLOBAL - INTEGRANTE 1
+// Rama: feature/navbar-footer
+// =========================================
+
+function cargarNavbar() {
+
+    const header = document.querySelector("header");
+
+    if (!header) {
+        return;
+    }
+
+    header.innerHTML = `
+        <nav class="navbar navbar-expand-lg site-navbar">
+
+            <div class="container">
+
+                <!-- MARCA -->
+                <a
+                    class="navbar-brand site-brand"
+                    href="index.html"
+                    aria-label="Ir al inicio de TechNova Solutions"
+                >
+
+                    <span class="site-brand-logo">
+                        TN
+                    </span>
+
+                    <span class="site-brand-text">
+                        <strong>TechNova</strong>
+                        <small>Solutions</small>
+                    </span>
+
+                </a>
+
+
+                <!-- BOTÓN MÓVIL -->
+                <button
+                    class="navbar-toggler site-navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarTechNova"
+                    aria-controls="navbarTechNova"
+                    aria-expanded="false"
+                    aria-label="Abrir navegación"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <!-- NAVEGACIÓN -->
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarTechNova"
+                >
+
+                    <ul class="navbar-nav ms-auto align-items-lg-center site-nav">
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link site-nav-link"
+                                href="index.html"
+                            >
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link site-nav-link"
+                                href="servicios.html"
+                            >
+                                Servicios
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link site-nav-link"
+                                href="soluciones.html"
+                            >
+                                Soluciones
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link site-nav-link"
+                                href="nosotros.html"
+                            >
+                                Nosotros
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link site-nav-link"
+                                href="faq.html"
+                            >
+                                FAQ
+                            </a>
+                        </li>
+
+                        <li class="nav-item site-nav-contact">
+                            <a
+                                class="site-nav-button"
+                                href="contacto.html"
+                            >
+                                Contáctanos
+                                <span>→</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+    `;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    cargarNavbar();
+
+});
 
 
 

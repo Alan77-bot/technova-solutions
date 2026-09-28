@@ -1523,6 +1523,165 @@ p {
 }
 
 
+/* ==========================================================
+   RESPONSIVE PREMIUM HOME
+========================================================== */
+
+@media (max-width: 991px) {
+
+    .hero-row {
+        min-height: auto;
+
+        padding: 70px 0;
+    }
+
+    .hero-title {
+        font-size: 52px;
+    }
+
+    .hero-visual {
+        min-height: 540px;
+    }
+
+    .impact-wrapper {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 50px;
+    }
+
+    .process-timeline {
+        grid-template-columns: 1fr;
+
+        border-top: 0;
+    }
+
+    .timeline-step {
+        padding: 20px 0 30px 70px;
+
+        border-right: 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .timeline-number {
+        top: 18px;
+        left: 0;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .brand-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brand-strip-item:nth-child(2) {
+        border-right: 0;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .hero-title {
+        font-size: 39px;
+
+        letter-spacing: -1.2px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions a {
+        width: 100%;
+    }
+
+    .hero-metrics {
+        justify-content: space-between;
+    }
+
+    .hero-metric {
+        min-width: auto;
+
+        margin-right: 10px;
+        padding-right: 10px;
+    }
+
+    .hero-metric strong {
+        font-size: 21px;
+    }
+
+    .hero-metric span {
+        font-size: 10px;
+    }
+
+    .hero-visual {
+        min-height: 470px;
+    }
+
+    .digital-dashboard {
+        width: 94%;
+
+        padding: 22px;
+    }
+
+    .floating-card-top,
+    .floating-card-bottom {
+        display: none;
+    }
+
+    .floating-card-right {
+        top: 15px;
+        right: 0;
+    }
+
+    .brand-strip-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-strip-item {
+        justify-content: flex-start;
+
+        border-right: 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .impact-wrapper {
+        padding: 32px 24px;
+    }
+
+    .premium-card {
+        padding: 27px;
+    }
+
+    .final-cta-box {
+        padding: 45px 28px;
+    }
+
+    .final-cta-actions {
+        flex-direction: column;
+    }
+
+    .final-cta-actions a {
+        width: 100%;
+    }
+
+}
+
+
 /* =========================================
    NAVBAR Y FOOTER - INTEGRANTE 1
 ========================================= */

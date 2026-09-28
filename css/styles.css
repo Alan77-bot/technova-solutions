@@ -137,6 +137,12 @@ p {
   margin-top: 10px;
   font-size: 14px;
 }
+.card-icon {
+  display: block;
+  font-size: 40px;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
 
 /* =========================================
    FILTRO DE SERVICIOS - INTEGRANTE 2

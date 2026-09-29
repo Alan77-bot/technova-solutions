@@ -2339,6 +2339,22 @@ p {
 /* =========================================
    SOLUCIONES - INTEGRANTE 3
 ========================================= */
+.btn-team:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    transition: 0.2s ease;
+}
+
+
+@media (max-width: 576px) {
+    .card-team {
+        text-align: center;
+    }
+}
+.section-title + p {
+    margin-bottom: 30px;
+}
+
 
 /* =========================================
    DETALLE DE SOLUCIÓN - INTEGRANTE 3

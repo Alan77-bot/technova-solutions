@@ -522,6 +522,19 @@ document.addEventListener("DOMContentLoaded", function () {
    DETALLE DE SOLUCIÓN - INTEGRANTE 3
    Rama: feature/detalle-solucion
 ========================================= */
+const modalDetalle = document.getElementById('modalDetalle');
+
+if (modalDetalle) {
+    modalDetalle.addEventListener('show.bs.modal', function (event) {
+        const boton = event.relatedTarget;
+
+        const titulo = boton.getAttribute('data-titulo');
+        const texto = boton.getAttribute('data-texto');
+
+        modalDetalle.querySelector('#modalDetalleTitulo').textContent = titulo;
+        modalDetalle.querySelector('#modalDetalleTexto').textContent = texto;
+    });
+}
 
 /* =========================================
    NOSOTROS - INTEGRANTE 4

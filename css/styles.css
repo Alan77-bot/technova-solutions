@@ -2384,6 +2384,16 @@ p {
   border-color: var(--color-primary);
   border-radius: 8px;
 }
+#form-contacto .card,
+.card-team {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.card-team {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    padding: 24px;
+}
 @media (max-width: 576px) {
   #form-contacto {
     padding: 0.5rem;

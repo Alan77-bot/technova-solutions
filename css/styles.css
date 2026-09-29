@@ -2626,3 +2626,175 @@ p {
     width: 94%;
   }
 }
+
+/* =========================================
+   EQUIPO - FEATURE / SECCIÓN INTEGRANTES (6 INTEGRANTES)
+========================================= */
+
+.team-section {
+  position: relative;
+}
+
+.team-member-card {
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Accent top border on cards */
+.team-member-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-secondary);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 3;
+}
+
+.team-member-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(36, 71, 121, 0.14) !important;
+  border-color: rgba(36, 71, 121, 0.25);
+}
+
+.team-member-card:hover::before {
+  opacity: 1;
+}
+
+.team-img-box {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background-color: #eef1f6;
+  overflow: hidden;
+}
+
+.team-img-box img.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.45s ease, transform 0.45s ease;
+}
+
+.team-member-card:hover .team-img-box img.team-img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Subtle gradient overlay on image hover */
+.team-img-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(34, 37, 43, 0.4) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.team-member-card:hover .team-img-box::after {
+  opacity: 1;
+}
+
+/* Member ID badge on top left of image */
+.team-num-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  background: rgba(34, 37, 43, 0.75);
+  backdrop-filter: blur(4px);
+  color: var(--color-white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.team-card-title {
+  color: var(--color-text);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* High-contrast Role Badges */
+.role-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 50px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.role-badge-primary {
+  background-color: rgba(151, 26, 45, 0.1);
+  color: #801323;
+  border: 1px solid rgba(151, 26, 45, 0.25);
+}
+
+.role-badge-secondary {
+  background-color: rgba(36, 71, 121, 0.1);
+  color: #1a355c;
+  border: 1px solid rgba(36, 71, 121, 0.25);
+}
+
+/* Golden Accent Role Badge - High Contrast & High Legibility */
+.role-badge-accent {
+  background-color: rgba(217, 138, 0, 0.14);
+  color: #825200;
+  border: 1px solid rgba(217, 138, 0, 0.35);
+}
+
+.role-badge-success {
+  background-color: rgba(39, 140, 87, 0.1);
+  color: #175735;
+  border: 1px solid rgba(39, 140, 87, 0.25);
+}
+
+.team-card-desc {
+  color: #525866;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.team-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.team-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  color: #4b5563;
+  background-color: var(--color-bg);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.team-icon-btn:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border-color: var(--color-secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(36, 71, 121, 0.25);
+}
+

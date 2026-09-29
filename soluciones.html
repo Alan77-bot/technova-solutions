@@ -64,8 +64,7 @@
                 Sitio interno para centralizar comunicados,
                 documentos y procesos de la empresa.
             </p>
-            <button type="button" class="btn-team" aria-label="Ver detalle de Dashboard Analitico">Ver detalle</button>
-        </div>
+<button type="button" class="btn-team" aria-label="Ver detalle de Portal Corporativo">Ver detalle</button>        </div>
     </div>
 
     <div class="col-md-6 col-lg-3">
@@ -91,11 +90,22 @@
     </div>
 
 </div>
-
-                <!--
-                    feature/detalle-solucion
-                    Aquí se implementarán los detalles y modales.
-                -->
+                <div class="modal fade" id="modalDetalle" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalDetalleTitulo">Título</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p id="modalDetalleTexto">Descripción</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-team" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 

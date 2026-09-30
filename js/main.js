@@ -595,20 +595,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   contenedor.innerHTML = `
-    <div class="detalle-servicio-header">
-      <i class="bi ${servicio.icono} card-icon"></i>
-      <h1 class="section-title">${servicio.titulo}</h1>
+    <div class="detalle-servicio-grid">
+
+      <div class="detalle-servicio-info">
+        <i class="bi ${servicio.icono} card-icon"></i>
+        <h1 class="section-title">${servicio.titulo}</h1>
+        <p>${servicio.descripcion}</p>
+
+        <ul class="detalle-servicio-lista">
+          ${servicio.beneficios.map((item) => `<li>${item}</li>`).join("")}
+        </ul>
+
+        <a href="servicios.html" class="btn-team">Volver a Servicios</a>
+      </div>
+
+      <div class="detalle-servicio-imagen">
+        <img src="${servicio.imagen}" alt="${servicio.titulo}">
+      </div>
+
     </div>
-
-    <img
-      src="${servicio.imagen}"
-      alt="${servicio.titulo}"
-      class="detalle-servicio-img"
-    >
-
-    <p class="detalle-servicio-texto">${servicio.descripcion}</p>
-
-    <a href="servicios.html" class="btn-team">Volver a Servicios</a>
   `;
 });
 

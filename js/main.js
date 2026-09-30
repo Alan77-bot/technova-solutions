@@ -514,6 +514,57 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* =========================================
+   DETALLE DE SERVICIO - INTEGRANTE 2
+   Rama: feature/rediseno-servicios
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const contenedor = document.getElementById("detalle-servicio");
+
+  // Si la página no tiene este contenedor, no hace nada
+  if (!contenedor) {
+    return;
+  }
+
+  const servicios = {
+    desarrollo: {
+      titulo: "Desarrollo Web",
+      icono: "bi-code-slash",
+      imagen: "assets/img/servicio-desarrollo.jpg",
+      descripcion:
+        "Creamos sitios y aplicaciones web modernas, rápidas y adaptadas a cualquier dispositivo, usando las mejores prácticas de desarrollo front-end y back-end.",
+    },
+    soporte: {
+      titulo: "Soporte Técnico",
+      icono: "bi-headset",
+      imagen: "assets/img/servicio-soporte.jpg",
+      descripcion:
+        "Brindamos asistencia técnica rápida y confiable para mantener tus equipos y sistemas funcionando, con tiempos de respuesta ágiles.",
+    },
+    nube: {
+      titulo: "Nube",
+      icono: "bi-cloud",
+      imagen: "assets/img/servicio-nube.jpg",
+      descripcion:
+        "Migramos y gestionamos tu infraestructura en la nube con soluciones seguras, escalables y adaptadas al crecimiento de tu empresa.",
+    },
+    consultoria: {
+      titulo: "Consultoría",
+      icono: "bi-lightbulb",
+      imagen: "assets/img/servicio-consultoria.jpg",
+      descripcion:
+        "Asesoramos a tu empresa en la adopción de tecnología para mejorar sus procesos, reducir costos y potenciar sus resultados.",
+    },
+  };
+
+  const parametros = new URLSearchParams(window.location.search);
+  const id = parametros.get("id");
+  const servicio = servicios[id];
+
+  // AQUI VA EL SIGUIENTE PASO
+});
+
+/* =========================================
    SOLUCIONES - INTEGRANTE 3
    Rama: feature/soluciones
 ========================================= */

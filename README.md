@@ -1,94 +1,202 @@
-<div align="center">
+# TechNova Solutions
 
-# 🚀 TechNova Solutions
+Sitio web informativo desarrollado de forma colaborativa para la asignatura
+**Manejo y Configuración del Software** de la carrera de Software de la
+Universidad Técnica de Ambato.
 
-### Tecnología, innovación y desarrollo colaborativo
+## Descripción
 
-**Proyecto académico desarrollado con Git, GitHub y GitFlow**
+TechNova Solutions es una empresa ficticia dedicada a ofrecer soluciones
+tecnológicas como desarrollo web, soporte técnico, servicios en la nube y
+consultoría.
 
-`HTML5` · `CSS3` · `JavaScript` · `Bootstrap 5` · `Git` · `GitHub`
+El propósito del proyecto es simular un entorno real de desarrollo colaborativo
+utilizando Git, GitHub y el flujo de trabajo GitFlow.
 
----
+## Tecnologías utilizadas
 
-**Universidad Técnica de Ambato**  
-**FISEI · Ingeniería en Software**  
-**Manejo y Configuración del Software**
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap
+- Git
+- GitHub
 
-</div>
+## Metodología de trabajo
 
----
+El proyecto utiliza el modelo GitFlow con las siguientes ramas:
 
-## 📌 Descripción del proyecto
+- `main`: contiene las versiones estables del proyecto.
+- `develop`: integra las funcionalidades desarrolladas por el equipo.
+- `feature/*`: se utiliza para desarrollar nuevas funcionalidades.
+- `release/*`: se utiliza para preparar una nueva versión.
+- `hotfix/*`: se utiliza para corregir errores urgentes de producción.
 
-**TechNova Solutions** es una empresa ficticia orientada al desarrollo de
-soluciones tecnológicas para empresas, organizaciones y emprendimientos.
+Las funcionalidades se desarrollan en ramas independientes y posteriormente
+se integran mediante Pull Requests y revisión de código.
 
-El proyecto consiste en un sitio web informativo desarrollado de forma
-colaborativa por un equipo de **6 integrantes**, simulando un entorno real de
-desarrollo de software.
+## Integrantes
 
-La plataforma presenta información relacionada con:
+El proyecto está desarrollado por un equipo de 6 integrantes.
 
-- Desarrollo web.
-- Servicios tecnológicos.
-- Soluciones digitales.
-- Soporte técnico.
-- Servicios en la nube.
-- Información empresarial.
-- Contacto.
-- Preguntas frecuentes.
+| Integrante | Responsabilidad |
+|---|---|
+| Integrante 1 - Jefe de grupo | Inicio y Navbar/Footer |
+| Integrante 2 | Servicios y filtro de servicios |
+| Integrante 3 | Soluciones y detalle de solución |
+| Integrante 4 | Nosotros y equipo |
+| Integrante 5 | Contacto y validaciones |
+| Integrante 6 | FAQ y testimonios |
 
-> 💡 El objetivo no es únicamente desarrollar el sitio web, sino aplicar
-> correctamente un flujo de trabajo colaborativo mediante **GitFlow,
-> ramas, commits atómicos, Pull Requests, revisiones y resolución de
-> conflictos**.
+## Estructura del proyecto
 
----
+```text
+technova-solutions/
+│
+├── index.html
+├── servicios.html
+├── soluciones.html
+├── nosotros.html
+├── contacto.html
+├── faq.html
+│
+├── css/
+│   └── styles.css
+│
+├── js/
+│   └── main.js
+│
+├── assets/
+│   └── img/
+│
+├── README.md
+├── CONTRIBUTING.md
+├── LICENSE
+└── .gitignore
+```
 
-## 🎯 Objetivo
+## Ejecución del proyecto
 
-Aplicar buenas prácticas de **control de versiones y desarrollo colaborativo**
-utilizando Git y GitHub, organizando el trabajo mediante GitFlow y
-distribuyendo las funcionalidades entre los integrantes del equipo.
+El proyecto no necesita instalación de dependencias ni base de datos.
 
-Durante el desarrollo se aplican:
+### Opción 1: abrir directamente
 
-`GitFlow` · `Feature Branches` · `Commits atómicos` · `Pull Requests` ·
-`Code Review` · `Resolución de conflictos`
+1. Clonar el repositorio:
 
----
+```bash
+git clone https://github.com/Alan77-bot/technova-solutions.git
+```
 
-## 🛠️ Tecnologías utilizadas
+2. Ingresar a la carpeta:
 
-| Tecnología | Uso dentro del proyecto |
-|:---|:---|
-| 🌐 **HTML5** | Estructura y contenido de las páginas |
-| 🎨 **CSS3** | Diseño visual y estilos personalizados |
-| ⚡ **JavaScript** | Interactividad y comportamiento dinámico |
-| 🅱️ **Bootstrap 5** | Diseño responsive y componentes |
-| 🌿 **Git** | Control de versiones |
-| 🐙 **GitHub** | Repositorio remoto, PR y revisiones |
+```bash
+cd technova-solutions
+```
 
----
+3. Abrir el archivo:
 
-## 🎨 Identidad visual
+```text
+index.html
+```
 
-Todo el equipo trabaja con una misma identidad visual para mantener
-consistencia entre las diferentes páginas.
+en un navegador web.
 
-### Paleta de colores
+### Opción 2: utilizar Live Server
 
-| Uso | Color | Código |
-|:---|:---:|:---:|
-| Principal | 🔴 Rojo vino | `#971A2D` |
-| Secundario | 🔵 Azul | `#244779` |
-| Éxito | 🟢 Verde | `#278C57` |
-| Acento | 🟡 Dorado | `#D98A00` |
-| Texto | ⚫ Oscuro | `#22252B` |
-| Fondo | ⚪ Gris claro | `#F7F8FA` |
-| Superficie | ⚪ Blanco | `#FFFFFF` |
+Si se utiliza Visual Studio Code:
 
-### Tipografía
+1. Abrir la carpeta del proyecto.
+2. Instalar la extensión **Live Server** si no está instalada.
+3. Hacer clic derecho sobre `index.html`.
+4. Seleccionar **Open with Live Server**.
 
-```css
-font-family: Arial, Helvetica, sans-serif;
+## Flujo de contribución
+
+Para desarrollar una funcionalidad se utiliza el siguiente flujo:
+
+```text
+develop
+   ↓
+feature/nombre
+   ↓
+commits
+   ↓
+push
+   ↓
+Pull Request
+   ↓
+revisión
+   ↓
+develop
+```
+
+No se desarrollan funcionalidades directamente en `main` ni en `develop`.
+
+## Convención de commits
+
+Los commits utilizan el formato:
+
+```text
+tipo(area): descripción
+```
+
+Ejemplos:
+
+```text
+feat(faq): agrega preguntas frecuentes
+style(testimonios): unifica tarjetas con diseño general
+fix(testimonios): restaura y adapta seccion al diseño actual
+docs(repo): completa documentacion del proyecto
+```
+
+Los tipos utilizados incluyen:
+
+- `feat`: nueva funcionalidad.
+- `fix`: corrección.
+- `style`: cambios visuales.
+- `docs`: documentación.
+- `refactor`: reorganización sin cambiar el comportamiento.
+- `chore`: tareas de mantenimiento o configuración.
+
+## Pull Requests y revisiones
+
+Las funcionalidades se integran mediante Pull Requests.
+
+El flujo de revisión establecido para el equipo es:
+
+| Autor | Revisor principal |
+|---|---|
+| Integrante 1 | Integrante 2 |
+| Integrante 2 | Integrante 3 |
+| Integrante 3 | Integrante 4 |
+| Integrante 4 | Integrante 5 |
+| Integrante 5 | Integrante 6 |
+| Integrante 6 | Integrante 1 |
+
+Antes de realizar un merge se revisan los archivos modificados y se comprueba
+que los cambios correspondan únicamente a la tarea desarrollada.
+
+## Ventajas del flujo utilizado
+
+- Permite que varios integrantes trabajen de manera paralela.
+- Evita desarrollar directamente sobre la versión estable.
+- Mantiene un historial de cambios mediante commits.
+- Permite revisar los cambios antes de integrarlos.
+- Facilita identificar qué integrante desarrolló cada funcionalidad.
+
+## Dificultades encontradas
+
+Durante el desarrollo colaborativo se presentaron situaciones como:
+
+- Integración de cambios realizados por diferentes integrantes.
+- Necesidad de mantener un diseño visual uniforme.
+- Corrección de funcionalidades que dejaron de aparecer después de una integración.
+- Coordinación de ramas y Pull Requests.
+- Revisión del historial de ramas y commits.
+
+Estos problemas se resolvieron utilizando ramas independientes, Pull Requests,
+revisiones de código y actualización constante de la rama `develop`.
+
+## Licencia
+
+El proyecto incluye un archivo `LICENSE` con la licencia seleccionada por el equipo.

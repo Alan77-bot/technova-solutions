@@ -15,7 +15,13 @@
 
     <!-- CSS del proyecto -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap Icons -->
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+>
 </head>
+
 
 <body>
 
@@ -44,17 +50,87 @@
                     Soluciones diseñadas para apoyar la transformación
                     digital de nuestros clientes.
                 </p>
+<div class="row g-4 mt-2">
 
-                <!--
-                    feature/soluciones
-                    Aquí se agregarán las tarjetas de soluciones.
-                -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card-team h-100">
+            <h3 class="h5">Sistema de Ventas</h3>
+            <p>
+                Plataforma para gestionar pedidos, inventario y
+                reportes de ventas en tiempo real.
+            </p>
+<button type="button" class="btn-team" aria-label="Ver detalle de Sistema de Ventas"
+    data-bs-toggle="modal" data-bs-target="#modalDetalle"
+    data-titulo="Sistema de Ventas"
+    data-texto="Plataforma para gestionar pedidos, inventario y reportes de ventas en tiempo real. Incluye control de stock, facturación y reportes exportables.">
+    Ver detalle
+</button>        </div>
+    </div>
 
+    <div class="col-md-6 col-lg-3">
+        <div class="card-team h-100">
+            <h3 class="h5">Portal Corporativo</h3>
+            <p>
+                Sitio interno para centralizar comunicados,
+                documentos y procesos de la empresa.
+            </p>
+<button type="button" class="btn-team" aria-label="Ver detalle de Portal Corporativo"
+    data-bs-toggle="modal" data-bs-target="#modalDetalle"
+    data-titulo="Portal Corporativo"
+    data-texto="Sitio interno para centralizar comunicados, documentos y procesos de la empresa. Incluye gestión de contenidos, calendario y sistema de búsqueda.">
+    Ver detalle
+</button>        </div>
+    </div>
 
-                <!--
-                    feature/detalle-solucion
-                    Aquí se implementarán los detalles y modales.
-                -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card-team h-100">
+            <h3 class="h5">Dashboard Analítico</h3>
+            <p>
+                Panel visual con métricas clave para apoyar la
+                toma de decisiones del negocio.
+            </p>
+            <button type="button" class="btn-team" aria-label="Ver detalle de Dashboard Analitico"
+                data-bs-toggle="modal" data-bs-target="#modalDetalle"
+                data-titulo="Dashboard Analítico"
+                data-texto="Panel visual con métricas clave para apoyar la toma de decisiones del negocio. Incluye gráficos interactivos y reportes personalizables.">
+                Ver detalle
+            </button>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <div class="card-team h-100">
+            <h3 class="h5">Mesa de Ayuda</h3>
+            <p>
+                Sistema de tickets para soporte técnico y
+                seguimiento de incidencias.
+            </p>
+            <button type="button" class="btn-team" aria-label="Ver detalle de Mesa de Ayuda"
+                data-bs-toggle="modal" data-bs-target="#modalDetalle"
+                data-titulo="Mesa de Ayuda"
+                data-texto="Sistema de tickets para soporte técnico y seguimiento de incidencias. Incluye gestión de casos, notificaciones y reportes.">
+                Ver detalle
+            </button>
+        </div>
+    </div>
+
+</div>
+                <div class="modal fade" id="modalDetalle" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalDetalleTitulo">Título</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p id="modalDetalleTexto">Descripción</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-team" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 

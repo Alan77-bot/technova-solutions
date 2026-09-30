@@ -1,954 +1,223 @@
-<div align="center">
+# Guía de contribución — TechNova Solutions
 
-# 🤝 Guía de Contribución
+Este documento establece las reglas de trabajo colaborativo utilizadas en el proyecto **TechNova Solutions**.
 
-## TechNova Solutions
+## 1. Modelo de trabajo
 
-**Normas de colaboración, control de versiones y flujo GitFlow**
+El proyecto utiliza GitFlow con las siguientes ramas:
 
-`Git` · `GitHub` · `GitFlow` · `Pull Requests` · `Code Review`
+- `main`: versiones estables del proyecto.
+- `develop`: integración de las funcionalidades.
+- `feature/*`: desarrollo de funcionalidades.
+- `release/*`: preparación de versiones.
+- `hotfix/*`: correcciones urgentes sobre una versión publicada.
 
-</div>
+## 2. Reglas generales
 
----
+1. No realizar desarrollo directamente en `main`.
+2. No desarrollar funcionalidades directamente en `develop`.
+3. Toda rama `feature/*` debe crearse desde `develop` actualizado.
+4. Toda rama `release/*` debe crearse desde `develop`.
+5. Toda rama `hotfix/*` debe crearse desde `main`.
+6. Cada integrante debe trabajar en las ramas correspondientes a sus tareas.
+7. Los cambios deben integrarse mediante Pull Requests.
+8. No se debe fusionar un Pull Request que tenga conflictos sin resolver.
+9. No se debe modificar la paleta, tipografía o componentes visuales generales sin coordinación con el equipo.
+10. Las ramas utilizadas en el proyecto deben conservarse para permitir la revisión de su historial por parte del docente.
 
-## 📌 1. Propósito
+## 3. Creación de una rama feature
 
-Este documento establece las reglas y buenas prácticas que debe seguir todo el
-equipo durante el desarrollo colaborativo de **TechNova Solutions**.
-
-El objetivo es mantener un proceso de trabajo:
-
-- Organizado.
-- Trazable.
-- Colaborativo.
-- Fácil de revisar.
-- Compatible con GitFlow.
-- Basado en commits atómicos.
-- Integrado mediante Pull Requests.
-
-Todos los integrantes deben respetar estas reglas durante el desarrollo del
-proyecto.
-
----
-
-# 🌿 2. Modelo de ramas
-
-El proyecto utiliza el modelo de trabajo **GitFlow**.
-
-Las ramas principales utilizadas son:
-
-| Rama | Propósito |
-|---|---|
-| `main` | Contiene únicamente las versiones estables del proyecto |
-| `develop` | Integra las funcionalidades terminadas y revisadas |
-| `feature/*` | Desarrollo de nuevas funcionalidades |
-| `release/*` | Preparación de nuevas versiones |
-| `hotfix/*` | Corrección de errores urgentes |
-
----
-
-# 🚫 3. Regla principal
-
-Ningún integrante debe desarrollar directamente sobre:
-
-```text
-main
-develop
-```
-
-Estas ramas se utilizan principalmente para integración y versiones estables.
-
-Todo desarrollo debe realizarse desde una rama específica.
-
-Ejemplo:
-
-```text
-develop
-   │
-   └── feature/servicios
-```
-
----
-
-# 👥 4. Distribución del trabajo
-
-El proyecto está desarrollado por un equipo de **6 integrantes**.
-
-| Integrante | Primera funcionalidad | Segunda funcionalidad |
-|---|---|---|
-| Integrante 1 - Jefe | Inicio | Navbar / Footer |
-| Integrante 2 | Servicios | Filtro de servicios |
-| Integrante 3 | Soluciones | Detalle de solución |
-| Integrante 4 | Nosotros | Equipo |
-| Integrante 5 | Contacto | Validaciones |
-| Integrante 6 | FAQ | Testimonios |
-
-Cada integrante debe trabajar principalmente sobre las funcionalidades que
-tiene asignadas.
-
-No se debe modificar el código desarrollado por otro integrante sin
-coordinación previa con el equipo.
-
----
-
-# 🌱 5. Creación de ramas `feature/*`
-
-Toda nueva funcionalidad debe comenzar desde una versión actualizada de
-`develop`.
-
-Primero se actualiza la rama:
+Antes de iniciar una funcionalidad:
 
 ```bash
-git switch develop
+git checkout develop
 git pull origin develop
-```
-
-Luego se crea una nueva rama:
-
-```bash
-git switch -c feature/nombre-funcionalidad
+git checkout -b feature/nombre-funcionalidad
 ```
 
 Ejemplo:
 
 ```bash
-git switch -c feature/servicios
+git checkout -b feature/faq
 ```
 
-Las ramas utilizadas en el proyecto incluyen:
+Cada rama debe contener únicamente los cambios relacionados con la funcionalidad que se está desarrollando.
+
+## 4. Convención de commits
+
+Los commits deben seguir el formato:
 
 ```text
-feature/inicio
-feature/navbar-footer
-
-feature/servicios
-feature/filtro-servicios
-
-feature/soluciones
-feature/detalle-solucion
-
-feature/nosotros
-feature/equipo
-
-feature/contacto
-feature/validacion-contacto
-
-feature/faq
-feature/testimonios
+tipo(area): descripción
 ```
 
----
+Tipos utilizados:
 
-# 📝 6. Convención de commits
-
-Todos los commits deben seguir la siguiente estructura:
-
-```text
-tipo(alcance): descripción
-```
-
-Ejemplo:
-
-```bash
-git commit -m "feat(inicio): agrega hero principal"
-```
-
----
-
-## Tipos de commits
-
-| Tipo | Uso |
-|---|---|
-| `feat` | Agregar una nueva funcionalidad |
-| `fix` | Corregir un error |
-| `style` | Cambios visuales o de estilos |
-| `docs` | Cambios en documentación |
-| `test` | Agregar o modificar pruebas |
-| `refactor` | Reorganizar código sin cambiar funcionalidad |
-| `chore` | Configuración o mantenimiento |
+- `feat`: nueva funcionalidad.
+- `fix`: corrección de un error.
+- `style`: cambios visuales sin modificar la lógica.
+- `docs`: documentación.
+- `test`: pruebas.
+- `refactor`: reorganización del código sin cambiar su comportamiento.
+- `chore`: mantenimiento o configuración.
 
 Ejemplos:
 
-```bash
-git commit -m "feat(servicios): agrega tarjeta de desarrollo web"
+```text
+feat(servicios): agrega catalogo de servicios
+style(inicio): aplica estilos comunes al hero
+fix(contacto): corrige validacion de correo
+docs(readme): agrega instrucciones de ejecucion
 ```
 
-```bash
-git commit -m "style(servicios): aplica estilos a las tarjetas"
-```
+Los commits deben ser claros y estar relacionados con una misma tarea.
+
+## 5. Publicación de una rama
+
+Después de realizar los commits:
 
 ```bash
-git commit -m "fix(contacto): corrige validacion de campos vacios"
+git push -u origin nombre-rama
 ```
+
+Ejemplo:
 
 ```bash
-git commit -m "docs(readme): mejora documentacion del proyecto"
+git push -u origin feature/faq
 ```
 
-```bash
-git commit -m "feat(navbar): agrega navegacion global"
-```
+La opción `-u` establece la relación entre la rama local y su correspondiente rama remota.
 
-```bash
-git commit -m "feat(footer): agrega pie de pagina global"
-```
+## 6. Pull Requests
 
----
-
-# 🎯 7. Commits atómicos
-
-Cada commit debe representar un único cambio concreto.
-
-No se deben utilizar mensajes como:
+Las funcionalidades normales deben integrarse mediante:
 
 ```text
-cambios
-avance
-actualizacion
-prueba
-varias cosas
+feature/* → develop
 ```
 
-Ejemplo incorrecto:
+Cada Pull Request debe incluir:
 
-```bash
-git commit -m "cambios"
-```
+- Descripción de lo realizado.
+- Archivos principales modificados.
+- Forma de probar la funcionalidad.
+- Revisor asignado.
+- Cambios relacionados únicamente con la tarea correspondiente.
 
-Ejemplo correcto:
+No se debe realizar el merge hasta completar la revisión.
 
-```bash
-git commit -m "feat(contacto): agrega formulario de contacto"
-```
+## 7. Revisiones
 
-Otro ejemplo correcto:
+La revisión principal del equipo sigue este orden:
 
-```bash
-git commit -m "style(contacto): adapta formulario a dispositivos moviles"
-```
+| Autor del PR | Revisor principal |
+|---|---|
+| Integrante 1 | Integrante 2 |
+| Integrante 2 | Integrante 3 |
+| Integrante 3 | Integrante 4 |
+| Integrante 4 | Integrante 5 |
+| Integrante 5 | Integrante 6 |
+| Integrante 6 | Integrante 1 |
 
-La finalidad de los commits atómicos es permitir que cualquier integrante pueda
-comprender qué se modificó simplemente observando el historial.
+El revisor debe comprobar los archivos modificados y verificar que:
 
----
+- Los cambios correspondan a la funcionalidad indicada.
+- No existan modificaciones innecesarias.
+- La funcionalidad pueda probarse correctamente.
+- No existan conflictos pendientes.
 
-# 💾 8. Preparar un commit
+Si se solicitan cambios, estos deben realizarse en la misma rama del Pull Request.
 
-Antes de agregar cambios se debe revisar el estado del repositorio:
+## 8. Protección de la rama principal
 
-```bash
-git status
-```
+La rama `main` representa la versión estable del proyecto.
 
-Se deben agregar únicamente los archivos relacionados con el cambio realizado.
+Para las integraciones hacia `main` se debe utilizar Pull Request y respetar la protección configurada en GitHub.
+
+De acuerdo con los requisitos del proyecto, se requieren al menos **2 aprobaciones antes de realizar un merge hacia la rama principal**.
+
+## 9. Release
+
+Una release debe crearse desde `develop` cuando las funcionalidades necesarias estén integradas y el proyecto se encuentre estable.
 
 Ejemplo:
 
 ```bash
-git add servicios.html css/styles.css
+git checkout develop
+git pull origin develop
+git checkout -b release/1.0.0
 ```
 
-Luego se realiza el commit:
+En una rama `release` no deben agregarse nuevas funcionalidades. Se utiliza para correcciones finales, documentación y preparación de la versión.
 
-```bash
-git commit -m "feat(servicios): agrega catalogo de servicios"
+La release debe integrarse posteriormente en:
+
+```text
+release/1.0.0 → main
+release/1.0.0 → develop
 ```
 
-Cuando existan cambios de diferentes funcionalidades, se debe evitar utilizar:
+## 10. Hotfix
 
-```bash
-git add .
-```
-
-para no mezclar cambios innecesarios dentro del mismo commit.
-
----
-
-# ☁️ 9. Publicar una rama
-
-La primera vez que se sube una rama al repositorio remoto se utiliza:
-
-```bash
-git push -u origin feature/nombre-rama
-```
+Los hotfix se crean desde `main` para corregir errores detectados después de una publicación.
 
 Ejemplo:
 
 ```bash
-git push -u origin feature/servicios
+git checkout main
+git pull origin main
+git checkout -b hotfix/1.0.1
 ```
 
-Después del primer push se puede utilizar simplemente:
+El hotfix debe integrarse tanto en:
+
+```text
+hotfix/1.0.1 → main
+hotfix/1.0.1 → develop
+```
+
+## 11. Actualización del repositorio
+
+Antes de crear una nueva rama desde `develop`:
 
 ```bash
-git push
+git checkout develop
+git pull origin develop
 ```
 
----
-
-# 🔀 10. Pull Requests
-
-Toda rama `feature/*` debe integrarse mediante un **Pull Request**.
-
-No se debe realizar directamente:
+Antes de crear un hotfix:
 
 ```bash
-git switch develop
-git merge feature/nombre-rama
+git checkout main
+git pull origin main
 ```
 
-El flujo correcto es:
+Esto permite trabajar desde la versión más reciente del proyecto.
+
+## 12. Conservación de ramas
+
+Las ramas utilizadas durante el proyecto **no deben eliminarse después del merge**, ya que el docente revisará su historial como evidencia del trabajo realizado.
+
+Esto aplica a las ramas:
 
 ```text
 feature/*
-   │
-   ▼
-Push
-   │
-   ▼
-Pull Request
-   │
-   ▼
-Code Review
-   │
-   ▼
-Aprobaciones
-   │
-   ▼
-Merge
-   │
-   ▼
-develop
+fix/*
+docs/*
+release/*
+hotfix/*
 ```
 
----
-
-# 🎯 11. Configuración del Pull Request
-
-Al crear un Pull Request se debe comprobar que la configuración sea:
-
-```text
-base: develop
-compare: feature/nombre-rama
-```
-
-Ejemplo:
-
-```text
-base: develop
-compare: feature/inicio
-```
-
-No se debe utilizar `main` como destino directo de una rama `feature/*`.
-
----
-
-# ✍️ 12. Título del Pull Request
-
-El título debe describir claramente la funcionalidad desarrollada.
-
-Ejemplo:
-
-```text
-feat(inicio): implementa pagina principal de TechNova Solutions
-```
-
-Otro ejemplo:
-
-```text
-feat(layout): agrega navbar y footer globales
-```
-
----
-
-# 📄 13. Descripción del Pull Request
-
-Todo Pull Request debe incluir una descripción de los cambios realizados.
-
-Plantilla recomendada:
-
-```markdown
-## Descripción
-
-Breve explicación de la funcionalidad desarrollada.
-
-## Cambios realizados
-
-- Cambio 1.
-- Cambio 2.
-- Cambio 3.
-
-## Validación
-
-- Se verificó el funcionamiento.
-- Se respetó el diseño del proyecto.
-- Se comprobó el diseño responsive.
-- Se utilizaron commits atómicos.
-```
-
----
-
-# 👀 14. Revisión de código
-
-Antes de realizar un merge, los revisores deben ingresar a:
-
-```text
-Files changed
-```
-
-y revisar los archivos modificados.
-
-Se debe comprobar:
-
-- Correcto funcionamiento.
-- Calidad del código.
-- Archivos modificados.
-- Consistencia visual.
-- Diseño responsive.
-- Navegación.
-- Posibles errores.
-- Cambios innecesarios.
-- Conflictos.
-- Uso correcto de estilos compartidos.
-
----
-
-# ✅ 15. Aprobaciones
-
-Cada Pull Request relevante debe recibir como mínimo:
-
-```text
-2 aprobaciones
-```
-
-antes de realizar el merge.
-
-Las aprobaciones deben ser realizadas por integrantes distintos al autor del
-Pull Request.
-
-El autor no debe utilizar su propia aprobación como revisión válida.
-
----
-
-# 💬 16. Comentarios y sugerencias
-
-Los revisores pueden utilizar las herramientas disponibles en GitHub para:
-
-- 💬 Comentar una línea.
-- 💡 Realizar sugerencias.
-- ✅ Aprobar los cambios.
-- ❌ Solicitar modificaciones.
-
-Cuando exista una corrección, el autor debe realizarla en la misma rama.
-
-Ejemplo:
-
-```text
-feature/contacto
-```
-
-Se realiza la corrección:
-
-```bash
-git add contacto.html
-git commit -m "fix(contacto): corrige validacion solicitada en revision"
-git push
-```
-
-El Pull Request se actualizará automáticamente.
-
----
-
-# ⚔️ 17. Resolución de conflictos
-
-Si un Pull Request presenta conflictos con `develop`, estos deben resolverse
-antes de realizar el merge.
-
-Primero se actualizan las referencias:
-
-```bash
-git fetch origin
-```
-
-Luego se cambia a la rama correspondiente:
-
-```bash
-git switch feature/nombre-rama
-```
-
-Después se integra la versión actual de `develop`:
-
-```bash
-git merge origin/develop
-```
-
-Se deben revisar manualmente los archivos que presentan conflictos.
-
-Uno de los archivos compartidos que puede generar conflictos es:
-
-```text
-css/styles.css
-```
-
-Después de resolver el conflicto:
-
-```bash
-git add css/styles.css
-```
-
-Si Git requiere confirmar la resolución:
-
-```bash
-git commit -m "fix(servicios): resuelve conflicto con develop"
-```
-
-Finalmente:
-
-```bash
-git push
-```
-
----
-
-# ⚠️ 18. Regla para resolver conflictos
-
-No se debe resolver un conflicto eliminando automáticamente el trabajo de otro
-integrante.
-
-Se debe analizar qué cambios pertenecen a cada funcionalidad y conservar todos
-los cambios válidos.
-
-Ejemplo:
-
-```text
-SERVICIOS - INTEGRANTE 2
-
-CONTACTO - INTEGRANTE 5
-
-FAQ - INTEGRANTE 6
-```
-
-Si los tres bloques son correctos, los tres deben permanecer después de
-resolver el conflicto.
-
----
-
-# 🎨 19. Archivo `styles.css`
-
-El archivo:
-
-```text
-css/styles.css
-```
-
-es compartido por todo el equipo.
-
-Cada integrante debe colocar sus estilos dentro del bloque correspondiente a su
-funcionalidad.
-
-Ejemplo:
-
-```css
-/* =========================================
-   SERVICIOS - INTEGRANTE 2
-========================================= */
-```
-
-No se deben modificar sin coordinación los estilos pertenecientes a otros
-integrantes.
-
----
-
-# 🎨 20. Identidad visual
-
-Todas las páginas deben respetar la misma identidad visual.
-
-La paleta definida para el proyecto es:
-
-| Elemento | Color |
-|---|---|
-| Principal | `#971A2D` |
-| Secundario | `#244779` |
-| Verde | `#278C57` |
-| Dorado | `#D98A00` |
-| Texto | `#22252B` |
-| Fondo | `#F7F8FA` |
-| Blanco | `#FFFFFF` |
-
-La tipografía utilizada es:
-
-```css
-font-family: Arial, Helvetica, sans-serif;
-```
-
----
-
-# 🧱 21. Componentes compartidos
-
-Los integrantes deben reutilizar los estilos y componentes comunes cuando sea
-posible.
-
-Ejemplos:
-
-```text
-.btn-team
-.card-team
-.section-title
-.container-team
-```
-
-No se deben reemplazar estos estilos globales sin coordinación con el equipo.
-
----
-
-# 📱 22. Diseño responsive
-
-Cada funcionalidad debe comprobarse en diferentes tamaños de pantalla.
-
-Como mínimo:
-
-```text
-Escritorio
-Tablet
-Móvil
-```
-
-El proyecto puede utilizar:
-
-- Bootstrap Grid.
-- Flexbox.
-- CSS Grid.
-- Media Queries.
-
-Ejemplo:
-
-```css
-@media (max-width: 991px) {
-    /* Tablet */
-}
-
-@media (max-width: 576px) {
-    /* Móvil */
-}
-```
-
----
-
-# 🧪 23. Verificación antes del Pull Request
-
-Antes de publicar una funcionalidad se debe ejecutar:
-
-```bash
-git status
-```
-
-El resultado esperado es:
-
-```text
-nothing to commit, working tree clean
-```
-
-También se recomienda revisar el historial:
-
-```bash
-git log --oneline
-```
-
-La funcionalidad debe probarse en el navegador utilizando Live Server o una
-herramienta equivalente.
-
----
-
-# 🔄 24. Actualización de `develop`
-
-Después de que una funcionalidad sea integrada mediante Pull Request:
-
-```bash
-git switch develop
-git pull origin develop
-```
-
-Esto permite obtener todos los cambios más recientes realizados por el equipo.
-
-Antes de iniciar una nueva funcionalidad se debe crear la nueva rama desde
-este `develop` actualizado.
-
----
-
-# 🔐 25. Protección de ramas
-
-Las ramas principales deben protegerse:
-
-```text
-main
-develop
-```
-
-La configuración del repositorio debe impedir, cuando sea posible:
-
-- Push directo.
-- Merge sin Pull Request.
-- Merge sin revisiones requeridas.
-- Integración de cambios sin aprobación.
-
-Los cambios deben pasar por Pull Request y revisión.
-
----
-
-# 🧬 26. Método de merge
-
-Cuando un Pull Request ha sido revisado y aprobado se utilizará:
-
-```text
-Create a merge commit
-```
-
-Esto permite conservar los commits atómicos realizados durante el desarrollo.
-
-No se utilizará:
-
-```text
-Squash and merge
-```
-
-cuando sea necesario mantener el historial individual de los commits.
-
----
-
-# 🌳 27. Conservación de ramas
-
-Durante este proyecto las ramas se conservarán después de realizar el merge.
-
-Ejemplos:
-
-```text
-feature/inicio
-feature/navbar-footer
-feature/servicios
-feature/contacto
-feature/faq
-```
-
-Esto permite mantener evidencia del flujo de trabajo utilizado durante la
-evaluación.
-
-Por esta razón:
-
-```text
-NO eliminar las ramas después del merge
-```
-
----
-
-# 📦 28. Rama `release/*`
-
-Cuando las funcionalidades necesarias estén integradas y verificadas en
-`develop`, se debe crear una rama de release.
-
-Ejemplo:
-
-```bash
-git switch develop
-git pull origin develop
-git switch -c release/1.0.0
-```
-
-La rama `release/*` se utiliza para:
-
-- Revisión final.
-- Correcciones menores.
-- Preparación de versión.
-- Validación antes de publicar una versión estable.
-
-Al finalizar debe integrarse en:
-
-```text
-main
-develop
-```
-
----
-
-# 🏷️ 29. Versionamiento
-
-Después de integrar una versión estable en `main`, se puede crear un tag.
-
-Ejemplo:
-
-```bash
-git switch main
-git pull origin main
-
-git tag v1.0.0
-
-git push origin v1.0.0
-```
-
-El proyecto utilizará versionamiento semántico:
-
-```text
-MAJOR.MINOR.PATCH
-```
-
-Ejemplo:
-
-```text
-v1.0.0
-```
-
----
-
-# 🚑 30. Rama `hotfix/*`
-
-Si se encuentra un error urgente en una versión estable, se debe crear una rama
-desde `main`.
-
-Ejemplo:
-
-```bash
-git switch main
-git pull origin main
-git switch -c hotfix/1.0.1
-```
-
-Después de solucionar el problema:
-
-```bash
-git add archivo
-git commit -m "fix(proyecto): corrige error detectado en produccion"
-```
-
-La rama debe integrarse posteriormente en:
-
-```text
-main
-develop
-```
-
-Después se puede crear un nuevo tag:
-
-```text
-v1.0.1
-```
-
----
-
-# 🧹 31. Archivo `.gitignore`
-
-Todos los integrantes deben respetar el archivo:
-
-```text
-.gitignore
-```
-
-No se deben subir al repositorio:
-
-- Dependencias locales.
-- Archivos temporales.
-- Archivos generados automáticamente.
-- Configuraciones personales.
-- Credenciales.
-- Archivos innecesarios.
-
----
-
-# 📂 32. Estructura del proyecto
-
-La estructura general utilizada es:
-
-```text
-technova-solutions/
-│
-├── index.html
-├── servicios.html
-├── soluciones.html
-├── nosotros.html
-├── contacto.html
-├── faq.html
-│
-├── css/
-│   └── styles.css
-│
-├── js/
-│   └── main.js
-│
-├── assets/
-│   └── img/
-│
-├── README.md
-├── CONTRIBUTING.md
-├── LICENSE
-└── .gitignore
-```
-
----
-
-# 📋 33. Checklist antes del merge
-
-Antes de confirmar un merge se debe verificar:
-
-- [ ] La funcionalidad funciona correctamente.
-- [ ] La rama está actualizada.
-- [ ] No existen conflictos pendientes.
-- [ ] Se realizaron commits atómicos.
-- [ ] Los mensajes de commit siguen la convención.
-- [ ] Se revisaron los archivos en `Files changed`.
-- [ ] Se realizaron las revisiones necesarias.
-- [ ] Existen las aprobaciones requeridas.
-- [ ] El diseño respeta la identidad visual.
-- [ ] La funcionalidad es responsive.
-- [ ] No se modificaron archivos innecesarios.
-
----
-
-# 🔄 34. Flujo general del equipo
-
-```text
-main
- │
- └── develop
-       │
-       ├── feature/*
-       │      │
-       │      ├── Desarrollo
-       │      ├── Commits atómicos
-       │      ├── Push
-       │      │
-       │      ▼
-       │   Pull Request
-       │      │
-       │      ├── Files changed
-       │      ├── Code Review
-       │      ├── 2 aprobaciones
-       │      │
-       │      ▼
-       │     Merge
-       │      │
-       │      ▼
-       │   develop
-       │
-       ├── release/*
-       │      │
-       │      ├── main
-       │      └── develop
-       │
-       └── hotfix/*
-              │
-              ├── main
-              └── develop
-```
-
----
-
-<div align="center">
-
-# ✅ Regla de oro
-
-### Una funcionalidad → Una rama → Commits atómicos → Push → Pull Request → Revisión → Aprobación → Merge
-
-**TechNova Solutions**
-
-`Orden` · `Colaboración` · `Trazabilidad`
-
-</div>
+## 13. Evidencias
+
+Cada integrante debe conservar evidencias de su trabajo, entre ellas:
+
+- Rama utilizada.
+- Historial de commits.
+- Rama publicada en GitHub.
+- Pull Requests realizados.
+- Revisiones recibidas.
+- Revisiones realizadas a otros integrantes.
+- Funcionalidad terminada.
+
+Las evidencias serán utilizadas para el informe y la defensa del proyecto.

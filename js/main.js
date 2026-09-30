@@ -530,30 +530,54 @@ document.addEventListener("DOMContentLoaded", function () {
     desarrollo: {
       titulo: "Desarrollo Web",
       icono: "bi-code-slash",
-      imagen: "assets/img/servicio-desarrollo.jpg",
+      imagen: "img/servicio-desarrollo.jpg",
       descripcion:
         "Creamos sitios y aplicaciones web modernas, rápidas y adaptadas a cualquier dispositivo, usando las mejores prácticas de desarrollo front-end y back-end.",
+      beneficios: [
+        "Sitios responsivos para cualquier pantalla",
+        "Código optimizado para velocidad de carga",
+        "Integración con bases de datos y APIs",
+        "Soporte y mantenimiento posterior al lanzamiento",
+      ],
     },
     soporte: {
       titulo: "Soporte Técnico",
       icono: "bi-headset",
-      imagen: "assets/img/servicio-soporte.jpg",
+      imagen: "img/servicio-soporte.jpg",
       descripcion:
         "Brindamos asistencia técnica rápida y confiable para mantener tus equipos y sistemas funcionando, con tiempos de respuesta ágiles.",
+      beneficios: [
+        "Atención remota y presencial",
+        "Diagnóstico y solución de fallas",
+        "Mantenimiento preventivo de equipos",
+        "Tiempos de respuesta garantizados",
+      ],
     },
     nube: {
       titulo: "Nube",
       icono: "bi-cloud",
-      imagen: "assets/img/servicio-nube.jpg",
+      imagen: "img/servicio-nube.jpg",
       descripcion:
         "Migramos y gestionamos tu infraestructura en la nube con soluciones seguras, escalables y adaptadas al crecimiento de tu empresa.",
+      beneficios: [
+        "Migración sin pérdida de datos",
+        "Copias de seguridad automáticas",
+        "Escalable según tu crecimiento",
+        "Monitoreo y seguridad 24/7",
+      ],
     },
     consultoria: {
       titulo: "Consultoría",
       icono: "bi-lightbulb",
-      imagen: "assets/img/servicio-consultoria.jpg",
+      imagen: "img/servicio-consultoria.jpg",
       descripcion:
         "Asesoramos a tu empresa en la adopción de tecnología para mejorar sus procesos, reducir costos y potenciar sus resultados.",
+      beneficios: [
+        "Diagnóstico tecnológico personalizado",
+        "Plan de acción a corto y largo plazo",
+        "Acompañamiento durante la implementación",
+        "Enfoque en reducción de costos",
+      ],
     },
   };
 

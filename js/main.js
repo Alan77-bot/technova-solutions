@@ -561,7 +561,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const id = parametros.get("id");
   const servicio = servicios[id];
 
-  // AQUI VA EL SIGUIENTE PASO
+  if (!servicio) {
+    contenedor.innerHTML = `
+      <h1 class="section-title">Servicio no encontrado</h1>
+      <p>El servicio que buscas no existe o el enlace es incorrecto.</p>
+      <a href="servicios.html" class="btn-team">Volver a Servicios</a>
+    `;
+    return;
+  }
+
+  contenedor.innerHTML = `
+    <div class="detalle-servicio-header">
+      <i class="bi ${servicio.icono} card-icon"></i>
+      <h1 class="section-title">${servicio.titulo}</h1>
+    </div>
+
+    <img
+      src="${servicio.imagen}"
+      alt="${servicio.titulo}"
+      class="detalle-servicio-img"
+    >
+
+    <p class="detalle-servicio-texto">${servicio.descripcion}</p>
+
+    <a href="servicios.html" class="btn-team">Volver a Servicios</a>
+  `;
 });
 
 /* =========================================

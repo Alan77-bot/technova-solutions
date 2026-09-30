@@ -514,6 +514,110 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* =========================================
+   DETALLE DE SERVICIO - INTEGRANTE 2
+   Rama: feature/rediseno-servicios
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const contenedor = document.getElementById("detalle-servicio");
+
+  // Si la página no tiene este contenedor, no hace nada
+  if (!contenedor) {
+    return;
+  }
+
+  const servicios = {
+    desarrollo: {
+      titulo: "Desarrollo Web",
+      icono: "bi-code-slash",
+      imagen: "img/servicio-desarrollo.jpg",
+      descripcion:
+        "Creamos sitios y aplicaciones web modernas, rápidas y adaptadas a cualquier dispositivo, usando las mejores prácticas de desarrollo front-end y back-end.",
+      beneficios: [
+        "Sitios responsivos para cualquier pantalla",
+        "Código optimizado para velocidad de carga",
+        "Integración con bases de datos y APIs",
+        "Soporte y mantenimiento posterior al lanzamiento",
+      ],
+    },
+    soporte: {
+      titulo: "Soporte Técnico",
+      icono: "bi-headset",
+      imagen: "img/servicio-soporte.jpg",
+      descripcion:
+        "Brindamos asistencia técnica rápida y confiable para mantener tus equipos y sistemas funcionando, con tiempos de respuesta ágiles.",
+      beneficios: [
+        "Atención remota y presencial",
+        "Diagnóstico y solución de fallas",
+        "Mantenimiento preventivo de equipos",
+        "Tiempos de respuesta garantizados",
+      ],
+    },
+    nube: {
+      titulo: "Nube",
+      icono: "bi-cloud",
+      imagen: "img/servicio-nube.jpg",
+      descripcion:
+        "Migramos y gestionamos tu infraestructura en la nube con soluciones seguras, escalables y adaptadas al crecimiento de tu empresa.",
+      beneficios: [
+        "Migración sin pérdida de datos",
+        "Copias de seguridad automáticas",
+        "Escalable según tu crecimiento",
+        "Monitoreo y seguridad 24/7",
+      ],
+    },
+    consultoria: {
+      titulo: "Consultoría",
+      icono: "bi-lightbulb",
+      imagen: "img/servicio-consultoria.jpg",
+      descripcion:
+        "Asesoramos a tu empresa en la adopción de tecnología para mejorar sus procesos, reducir costos y potenciar sus resultados.",
+      beneficios: [
+        "Diagnóstico tecnológico personalizado",
+        "Plan de acción a corto y largo plazo",
+        "Acompañamiento durante la implementación",
+        "Enfoque en reducción de costos",
+      ],
+    },
+  };
+
+  const parametros = new URLSearchParams(window.location.search);
+  const id = parametros.get("id");
+  const servicio = servicios[id];
+
+  if (!servicio) {
+    contenedor.innerHTML = `
+      <h1 class="section-title">Servicio no encontrado</h1>
+      <p>El servicio que buscas no existe o el enlace es incorrecto.</p>
+      <a href="servicios.html" class="btn-team">Volver a Servicios</a>
+    `;
+    return;
+  }
+
+  contenedor.innerHTML = `
+    <div class="detalle-servicio-grid">
+
+      <div class="detalle-servicio-info">
+        <i class="bi ${servicio.icono} card-icon"></i>
+        <h1 class="section-title">${servicio.titulo}</h1>
+        <p>${servicio.descripcion}</p>
+
+        <ul class="detalle-servicio-lista">
+          ${servicio.beneficios.map((item) => `<li>${item}</li>`).join("")}
+        </ul>
+
+        <a href="servicios.html" class="btn-team">Volver a Servicios</a>
+      </div>
+
+      <div class="detalle-servicio-imagen">
+        <img src="${servicio.imagen}" alt="${servicio.titulo}">
+      </div>
+
+    </div>
+  `;
+});
+
+/* =========================================
    SOLUCIONES - INTEGRANTE 3
    Rama: feature/soluciones
 ========================================= */
